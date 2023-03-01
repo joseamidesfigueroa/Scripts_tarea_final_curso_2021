@@ -2,7 +2,7 @@ library(openair)
 library(ggplot2)
 #Lee los datos desde el archivo previamente generado
 datos<-
-  read.table("C:/Users/arw/Dropbox/Curso_Calidad_Aire_2021/trabajo_final/datos/datos_ESA_openair.csv",sep = ";",header = TRUE, na.strings = "NA")
+  read.table("datos_ESA_openair.csv",sep = ";",header = TRUE, na.strings = "NA")
 #Da formato de fecha a la columna de fechas según el formato de OpenAir
 datos$date<-as.POSIXct(datos$date, format="%d/%m/%Y %H:%M", tz="UTC")
 datos$NO2[datos$NO2 < 0]<-NA
